@@ -1,0 +1,40 @@
+public class SavingsAccount {
+
+
+    private static int annualInterestRate;
+    private double savingsBalance;
+
+    // sets the annualInterestRate to a new value.
+    public static void modifyInterestRate(int newRate){
+//        System.out.println("previous: " + annualInterestRate);
+        annualInterestRate = newRate;
+//        System.out.println("new: "+ annualInterestRate);
+    }
+
+    // constructor to set balance
+    public SavingsAccount(double balance){
+        this.savingsBalance = balance;
+        annualInterestRate = 0;
+
+    }
+
+    // default constructor
+    public SavingsAccount(){
+        this(0);
+    }
+
+    public double getSavingsBalance(){
+        return this.savingsBalance;
+    }
+
+
+    public void calculateMonthlyInterest(){
+
+        double interest = annualInterestRate / 100.0;
+//        System.out.printf("%.2f\n", (savingsBalance * interest)/12.0);
+        this.savingsBalance +=  ((savingsBalance * interest) / 12.0);
+
+    }
+}
+
+
