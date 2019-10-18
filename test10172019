@@ -1,0 +1,32 @@
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+class Application {
+
+    // instantiate two objects
+    SavingsAccount saver1 =  new SavingsAccount(2000.00);
+    SavingsAccount saver2 =  new SavingsAccount(3000.00);
+
+    @Test
+    void test4Percent() {
+
+        SavingsAccount.modifyInterestRate(4);
+
+        saver1.calculateMonthlyInterest();
+        saver2.calculateMonthlyInterest();
+
+        System.out.printf("saver1 balance: %.2f\nsaver2 balance: %.2f\n",saver1.getSavingsBalance(), saver2.getSavingsBalance());
+    }
+
+    @Test
+    void test5Percent() {
+
+        SavingsAccount.modifyInterestRate(5);
+
+        saver1.calculateMonthlyInterest();
+        saver2.calculateMonthlyInterest();
+
+        System.out.printf("saver1 balance: %.2f\nsaver2 balance: %.2f\n",saver1.getSavingsBalance(), saver2.getSavingsBalance());
+    }
+}
